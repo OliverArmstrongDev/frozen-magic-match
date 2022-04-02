@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/frozen-magic-match/static/css/main.7d0299b4.css",
-    "main.js": "/frozen-magic-match/static/js/main.30345e2f.js",
+    "main.js": "/frozen-magic-match/static/js/main.3450d8e1.js",
     "static/media/Icekingdom.otf": "/frozen-magic-match/static/media/Icekingdom.def46f7617106d6b6e38.otf",
     "static/media/Icekingdom.ttf": "/frozen-magic-match/static/media/Icekingdom.5ea19c6decda768f6403.ttf",
     "index.html": "/frozen-magic-match/index.html",
     "main.7d0299b4.css.map": "/frozen-magic-match/static/css/main.7d0299b4.css.map",
-    "main.30345e2f.js.map": "/frozen-magic-match/static/js/main.30345e2f.js.map"
+    "main.3450d8e1.js.map": "/frozen-magic-match/static/js/main.3450d8e1.js.map"
   },
   "entrypoints": [
     "static/css/main.7d0299b4.css",
-    "static/js/main.30345e2f.js"
+    "static/js/main.3450d8e1.js"
   ]
 }
