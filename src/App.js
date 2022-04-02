@@ -6,19 +6,28 @@ import SingleCard from './components/SingleCard';
 import { useTheme } from './hooks/useTheme';
 
 
-
 const cardImages = [
   {"src": "./img/anna.png", matched: false},
   {"src": "./img/elsa.png", matched: false},
   {"src": "./img/elsa-anna.png", matched: false},
   {"src": "./img/anna-elsa-olaf.png", matched: false},
   {"src": "./img/sven.png", matched: false},
-  {"src": "./img/frozen-all.png", matched: false},
-  {"src": "./img/anna-olaf.png", matched: false},
-  {"src": "./img/kristof.png", matched: false},
-  {"src": "./img/elsa2.png", matched: false},
-  {"src": "./img/olaf2.png", matched: false}
+  {"src": "./img/frozen-all.png", matched: false}
+  
 ]
+
+// const cardImages = [
+//   {"src": "./img/anna.png", matched: false},
+//   {"src": "./img/elsa.png", matched: false},
+//   {"src": "./img/elsa-anna.png", matched: false},
+//   {"src": "./img/anna-elsa-olaf.png", matched: false},
+//   {"src": "./img/sven.png", matched: false},
+//   {"src": "./img/frozen-all.png", matched: false},
+//   {"src": "./img/anna-olaf.png", matched: false},
+//   {"src": "./img/kristof.png", matched: false},
+//   {"src": "./img/elsa2.png", matched: false},
+//   {"src": "./img/olaf2.png", matched: false}
+// ]
 // const cardImages = [
 //   {"src": "/img/helmet-1.png", matched: false},
 //   {"src": "/img/potion-1.png", matched: false},
