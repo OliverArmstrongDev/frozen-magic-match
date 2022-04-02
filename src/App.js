@@ -8,8 +8,8 @@ import { useTheme } from './hooks/useTheme';
 
 
 const cardImages = [
-  {"src": "/img/anna.png", matched: false},
-  {"src": "/img/elsa.png", matched: false},
+  {"src": "./img/anna.png", matched: false},
+  {"src": "../img/elsa.png", matched: false},
   {"src": "/img/elsa-anna.png", matched: false},
   {"src": "/img/frozen-all.png", matched: false},
   {"src": "/img/anna-elsa-olaf.png", matched: false},
