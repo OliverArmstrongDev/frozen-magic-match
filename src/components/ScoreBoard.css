@@ -2,6 +2,12 @@
   width: 20vw;
 }
 
-/* .score-title {
-  font-size: 50px;
-} */
+@media only screen and (min-width: 300px) {
+  .score-container {
+    width: 100%;
+  }
+  p {
+    font-size: 1em;
+    color: rgb(126, 126, 126);
+  }
+}

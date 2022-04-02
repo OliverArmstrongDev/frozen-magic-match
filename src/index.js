@@ -5,14 +5,16 @@ import './fonts/Icekingdom.ttf';
 import App from './App';
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import ScoreBoard from './components/ScoreBoard';
+import ThemeSelector from './components/ThemeSelector';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeContextProvider>
+    <ThemeSelector/>
       <div className='main-container'>
-    <ScoreBoard />
+    <ScoreBoard/>
     <App />
     </div>
     </ThemeContextProvider>

@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 import './App.css';
 
 import SingleCard from './components/SingleCard';
-// import ThemeSelector from './components/ThemeSelector'
+//  import ThemeSelector from './components/ThemeSelector'
 import { useTheme } from './hooks/useTheme';
 
 
@@ -39,9 +39,7 @@ const [disabled, setDisabled] = useState(false)
 const logoImg = './img/logo.png';
 
 //get global state
-const {score, updateScore} = useTheme();
-
-const {color} = useTheme();
+const {color, updateScore} = useTheme();
 
 useEffect(() => { 
   document.body.style.backgroundColor = color;
@@ -109,9 +107,9 @@ shuffleCards();
 // },[score,turns])
 
   return (
-    <div  className="App" style={{background: color}}>
+    <div  className="App main-div" style={{background: color}}>
     
-     {/* <ThemeSelector/> */}
+     
      <div className='logo-div'>
       <img className='logo' src={logoImg} alt="frozen logo" />
       <h2 className='font-face-ik magic'>Magic Match!</h2>
