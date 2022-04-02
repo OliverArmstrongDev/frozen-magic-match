@@ -36,7 +36,7 @@ const [choiceTwo, setChoiceTwo] = useState(null)
 const [disabled, setDisabled] = useState(false)
 
 //logo
-const logoImg = '/img/logo.png';
+const logoImg = './img/logo.png';
 
 //get global state
 const {score, updateScore} = useTheme();
