@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './fonts/Icekingdom.ttf';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ThemeContextProvider } from './contexts/ThemeContext';
+import ScoreBoard from './components/ScoreBoard';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <ThemeContextProvider>
+      <div className='main-container'>
+    <ScoreBoard />
     <App />
+    </div>
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
