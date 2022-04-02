@@ -17,7 +17,7 @@ body {
 .main-container {
   display: flex;
   gap: 0px;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
