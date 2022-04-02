@@ -17,15 +17,15 @@ body {
 .main-container {
   display: flex;
   gap: 0px;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 600px) {
   .main-container {
     display: block;
   }
   .score-container {
-    width: 100%;
+    /* width: 100%; */
   }
 }

@@ -65,7 +65,7 @@ p {
 
 @media only screen and (min-width: 300px) {
   .logo-div {
-    width: 100%;
+    width: 40%;
   }
   .magic {
     margin-top: 5px;
@@ -81,5 +81,8 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+  }
+  p {
+    font-size: 1em;
   }
 }
