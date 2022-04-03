@@ -1,10 +1,12 @@
-import React from 'react'
-import { useTheme } from '../hooks/useTheme';
-import './ScoreBoard.css';
+import React, { useContext } from 'react'
+import { MainContext } from '../contexts/GeneralContext';
+// import { useTheme } from '../hooks/useTheme';
+//import './ScoreBoard.css';
 
 
 const ScoreBoard =() => {
-    const {score} = useTheme();
+    //const {score} = useTheme();
+    const {score} = useContext(MainContext);
 
   return (
     <div className='score-container'>

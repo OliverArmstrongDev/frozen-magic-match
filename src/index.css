@@ -13,19 +13,3 @@ body {
   background: rgb(140, 148, 156);
   color: #fff;
 }
-
-.main-container {
-  display: flex;
-  gap: 0px;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (max-width: 600px) {
-  .main-container {
-    display: block;
-  }
-  .score-container {
-    /* width: 100%; */
-  }
-}

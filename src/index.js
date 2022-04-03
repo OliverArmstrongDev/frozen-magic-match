@@ -6,18 +6,22 @@ import App from './App';
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import ScoreBoard from './components/ScoreBoard';
 import ThemeSelector from './components/ThemeSelector';
-
+import Header from './components/Header';
+import GeneralContext from './contexts/GeneralContext';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContextProvider>
-    <ThemeSelector/>
-      <div className='main-container'>
-    <ScoreBoard/>
-    <App />
-    </div>
-    </ThemeContextProvider>
+     <GeneralContext> 
+      <ThemeContextProvider>
+        <Header/>
+        <ThemeSelector/>
+      {/* <div className='main-container flex justify-center content-center'> */}
+        <ScoreBoard/>
+        <App />
+      {/* </div> */}
+      </ThemeContextProvider>
+    </GeneralContext>
   </React.StrictMode>,
   document.getElementById('root')
 );
