@@ -1,6 +1,6 @@
 import "./SingleCard.css"
 
-const cover = './img/cover.jpg';
+const cover = "./img/cover.jpg";
 
 export default function SingleCard({card, handleChoice, flipped, disabled}) {
 
