@@ -8,8 +8,6 @@ import SingleCard from './components/SingleCard';
 
 function GameLogic() {
   //get global state variables
-  // const { setKeyword, keyword, color, updateScore} = useTheme();
-
 const {
   dispatch, actions,
   state,
@@ -22,8 +20,6 @@ useEffect(() => {
   shuffleCards();
   },[])
 
- 
-  
 //update background color on color change
 useEffect(() => { 
   document.body.style.backgroundColor = state.color;
