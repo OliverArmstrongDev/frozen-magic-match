@@ -1,9 +1,8 @@
 // import { useTheme } from './hooks/useTheme';
-import { useState, useEffect, useContext} from 'react';
+import { useEffect, useContext} from 'react';
 import './App.css';
 import { MainContext } from './contexts/GeneralContext';
 import SingleCard from './components/SingleCard';
-
 
 
 function GameLogic() {
@@ -31,8 +30,6 @@ useEffect(() => {
     dispatch({type: actions.UPDATE_DISABLED, payload: true});
    
       if( state.choiceOne.src === state.choiceTwo.src){
-        console.log('same src!');
-        
         const _data = state.cards.map(card => {
           if(card.src === state.choiceOne.src) {
           return {...card, matched: true }
@@ -47,7 +44,7 @@ useEffect(() => {
       
    }else { 
       setTimeout(() => resetTurn(), 1000);
-      console.log('ELSE', state.cards);
+    
     }
   }
 },[state.choiceOne, state.choiceTwo, state.turns])
