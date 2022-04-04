@@ -1,21 +1,18 @@
-import { useState, useEffect} from 'react';
+import { useContext} from 'react';
 import './App.css';
-
-
-import SingleCard from './components/SingleCard';
+import { MainContext } from './contexts/GeneralContext';
 
 import GameLogic from './GameLogic';
 
-//  import ThemeSelector from './components/ThemeSelector'
 
 
 
 
 function App() {
+  const {state} = useContext(MainContext);
   return (
     <>
       <GameLogic/> 
-
     </>
   )
 }

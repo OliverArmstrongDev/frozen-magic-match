@@ -6,6 +6,7 @@ export default function Button() {
   return (
     <div>
         <button className='font-face-ik btn' onClick={shuffleCards} >New Game</button> 
+    
     </div>
   )
 }

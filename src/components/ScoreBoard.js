@@ -6,11 +6,13 @@ import { MainContext } from '../contexts/GeneralContext';
 
 const ScoreBoard =() => {
     //const {score} = useTheme();
-    const {score} = useContext(MainContext);
+    const {state } = useContext(MainContext);
+    //console.log('sboard', score);
+    
 
   return (
     <div className='score-container'>
-        <p className='score-title'>Your last score: {score}</p>
+        <p className='score-title'>Your last score: {state.score}</p>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useTheme } from './hooks/useTheme';
+// import { useTheme } from './hooks/useTheme';
 import { useState, useEffect, useContext} from 'react';
 import './App.css';
 import { MainContext } from './contexts/GeneralContext';
@@ -8,18 +8,12 @@ import SingleCard from './components/SingleCard';
 
 function GameLogic() {
   //get global state variables
-  // const { setKeyword, keyword, color, updateScore} = useTheme();
-
 const {
-  score, setScore,
-  cards, setCards,
-  turns, setTurns,
-  choiceOne, setChoiceOne,
-  choiceTwo, setChoiceTwo,
-  disabled, setDisabled,
-  color,
+  dispatch, actions,
+  state,
   shuffleCards
 } = useContext(MainContext);
+
 
 //init shufflecards()
 useEffect(() => {
@@ -28,57 +22,65 @@ useEffect(() => {
 
 //update background color on color change
 useEffect(() => { 
-  document.body.style.backgroundColor = color;
-}, [color]) 
+  document.body.style.backgroundColor = state.color;
+}, [state.color]) 
+
 
 useEffect(() => {
-  if(choiceOne && choiceTwo){
-      setDisabled(true);
-    if( choiceOne.src === choiceTwo.src){
-       setCards(prevCards  => {
-         return prevCards.map(card => {
-           if(card.src === choiceOne.src) {
-             return {...card, matched: true}
-           }else{
-             return card;
-           }
-         })
-       })
-       setTimeout(() => resetTurn(), 1000);
-      } else { 
+  if(state.choiceOne && state.choiceTwo){
+    dispatch({type: actions.UPDATE_DISABLED, payload: true});
+   
+      if( state.choiceOne.src === state.choiceTwo.src){
+        console.log('same src!');
         
+        const _data = state.cards.map(card => {
+          if(card.src === state.choiceOne.src) {
+          return {...card, matched: true }
+          }
+          else
+          {
+            return card;
+          }
+        })
+        dispatch({type: actions.UPDATE_CARDS, payload: _data});
         setTimeout(() => resetTurn(), 1000);
-      }
-  } 
+      
+   }else { 
+      setTimeout(() => resetTurn(), 1000);
+      console.log('ELSE', state.cards);
+    }
+  }
+},[state.choiceOne, state.choiceTwo, state.turns])
 
-},[choiceOne, choiceTwo, turns])
 
 //handle a choice
 const handleChoice = (card) => {
-choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+state.choiceOne ? dispatch({type: actions.UPDATE_CHOICE2 , payload: card}) : dispatch({type: actions.UPDATE_CHOICE1, payload: card})
+
 }
 
 const resetTurn = () => {
-  setChoiceOne(null)
-  setChoiceTwo(null)
-  setTurns(prevTurns => prevTurns +1 )
-  setDisabled(false);
+  console.log('reset turn');
+  dispatch({type: actions.UPDATE_CHOICE1, payload: null})
+  dispatch({type: actions.UPDATE_CHOICE2, payload: null})
+  dispatch({type: actions.UPDATE_TURNS})
+  dispatch({type: actions.UPDATE_DISABLED, payload: false});
 }
   return (
     <>
-    <div  className="GameLogic main-div" style={{background: color}}>
+    <div  className="GameLogic main-div" style={{background: state.color}}>
       <div className="card-grid">
-        {cards.map(card => (
+        {state.cards.map(card => (
         <SingleCard 
         handleChoice={handleChoice} 
         key={card.id} 
         card={card}
-        flipped={card === choiceOne || card === choiceTwo || card.matched}
-        disabled={disabled}
+        flipped={card === state.choiceOne || card === state.choiceTwo || card.matched}
+        disabled={state.disabled}
         />
         ))}
         </div>
-        <p className='font-face-ik '>Turns: {turns}</p>
+        <p className='font-face-ik '>Turns: {state.turns}</p>
     </div>
      </>
   );
