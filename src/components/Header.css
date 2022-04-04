@@ -37,20 +37,22 @@ p {
   font-size: 1.8em;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 600px) {
   .logo-div {
-    width: 40%;
+    width: 60%;
   }
   .magic {
     margin-top: 5px;
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 200;
     letter-spacing: 3px;
   }
   .btn {
     font-size: 0.8em;
+    margin: 0.3em 0;
   }
   p {
     font-size: 1em;
+    color: #202020;
   }
 }
