@@ -26,10 +26,13 @@ button:hover {
 .card-grid {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(10px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  overflow: auto;
-  margin: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .logo-div {
@@ -65,7 +68,7 @@ p {
   font-size: 1.8em;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 600px) {
   .logo-div {
     width: 40%;
   }
@@ -81,5 +84,9 @@ p {
 
   p {
     font-size: 1em;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
   }
 }
