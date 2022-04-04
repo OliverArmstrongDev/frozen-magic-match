@@ -24,6 +24,20 @@ useEffect(() => {
   document.body.style.backgroundColor = state.color;
 }, [state.color]) 
 
+// useEffect(() => { 
+//   if(state.cards.length){
+//     state.cards.every(card=> (card.matched === true)) 
+//     ? 
+//     alert('You matched them all. Great work!')
+//     : 
+//     console.log('not all matched', state.cards);
+
+//   } 
+//   else{
+//    console.log('no lenth', state.cards.length );
+//   }
+// }, [state.cards]) 
+
 
 useEffect(() => {
   if(state.choiceOne && state.choiceTwo){
@@ -66,6 +80,7 @@ const resetTurn = () => {
   return (
     <>
     <div  className="GameLogic main-div" style={{background: state.color}}>
+    {state.cards.every(card=> (card.matched === true)) ? <div className='success-div font-face-ik'> <h1 className='success-msg'>Woohoo! <br /> You matched them all!!</h1></div>  : null}
       <div className="card-grid">
         {state.cards.map(card => (
         <SingleCard 
@@ -77,6 +92,7 @@ const resetTurn = () => {
         />
         ))}
         </div>
+       
         <p className='font-face-ik '>Turns: {state.turns}</p>
     </div>
      </>
