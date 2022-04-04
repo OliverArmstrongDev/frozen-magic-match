@@ -69,11 +69,11 @@ export default function GeneralContext({children}) {
    
     const cardImages = [
         {"src": "./img/anna.png", matched: false},
-        {"src": "./img/elsa.png", matched: true},
-        {"src": "./img/elsa-anna.png", matched: true},
-        {"src": "./img/anna-elsa-olaf.png", matched: true},
-        {"src": "./img/sven.png", matched: true},
-        {"src": "./img/frozen-all.png", matched: true}
+        {"src": "./img/elsa.png", matched: false},
+        {"src": "./img/elsa-anna.png", matched: false},
+        {"src": "./img/anna-elsa-olaf.png", matched: false},
+        {"src": "./img/sven.png", matched: false},
+        {"src": "./img/frozen-all.png", matched: false}
       ]
       
       //logo
