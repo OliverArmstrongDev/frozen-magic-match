@@ -29,6 +29,13 @@ function App() {
             <GameLogic/> 
             <ScoreBoardList />
           </Route>
+          <Route path={'/frozen-magic-match'}>
+          <Header/>
+          <ThemeSelector/>
+          <ScoreBoardSingle/>     
+            <GameLogic/> 
+            <ScoreBoardList />
+          </Route>
           <Route path={'/signup'}>
           {user && <Redirect to='/' />}
             <Signup/> 
