@@ -119,10 +119,10 @@ export default function GeneralContext({children}) {
 
    
     const cardImages = [
-        {"src": anna, matched: true},
-        {"src": elsa, matched: true},
-        {"src": elseAnna, matched: true},
-        {"src": annaElsaOlaf, matched: true},
+        {"src": anna, matched: false},
+        {"src": elsa, matched: false},
+        {"src": elseAnna, matched: false},
+        {"src": annaElsaOlaf, matched: false},
         {"src": sven, matched: false},
         {"src": frznAll, matched: false}
       ]
