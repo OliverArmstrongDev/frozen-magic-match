@@ -55,8 +55,8 @@ button:hover {
   letter-spacing: 3px;
 }
 .btn {
-  margin-top: -10px;
-  font-size: 1.5em;
+  /* margin-top: -10px; */
+  font-size: 1em;
   font-weight: 200;
   letter-spacing: 3px;
 }
@@ -68,6 +68,18 @@ p {
   font-size: 1.8em;
 }
 
+.save-score {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+.savebox{
+ /* display: none; */
+}
 @media only screen and (max-width: 600px) {
   .logo-div {
     width: 40%;

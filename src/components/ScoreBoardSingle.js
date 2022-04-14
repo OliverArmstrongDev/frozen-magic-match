@@ -12,7 +12,7 @@ const ScoreBoard =() => {
 
   return (
     <div className='score-container'>
-        <p className='score-title'>Your last score: {state.score}</p>
+        <p className='score-title'>Your last score: {state.lastScore}</p>
     </div>
   )
 }
