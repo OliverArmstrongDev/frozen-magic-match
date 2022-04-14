@@ -12,8 +12,17 @@ const actions = {
   UPDATE_TURNS: 'update-turns',
   UPDATE_CHOICE1: 'update-choice1',
   UPDATE_CHOICE2: 'update-choice2',
+  UPDATE_GAME: 'update-game',
   RESET_TURNS: 'reset-turns',
-  CHANGE_COLOR: 'change-color'
+  CHANGE_COLOR: 'change-color',
+  IS_CHECKED: 'is-checked',
+  LAST_SCORE: 'last-score',
+  CURRENT_SCORE: 'current-score',
+  ADD_DOC: 'add-document',
+  SAVE2_DB: 'save2-db',
+  MANUAL_CHANGE: 'manual-change',
+  RESET_APP: 'reset-app',
+  
 }
 
  //reducer
@@ -21,6 +30,22 @@ const actions = {
 
   const {type, payload} = action;  
     switch(type){
+      case actions.RESET_APP:
+        return {...state, ...resetVals}
+      case actions.MANUAL_CHANGE:
+        return {...state, manualChange: payload}
+      case actions.SAVE2_DB:
+        return {...state, saveToDB: payload}
+      case actions.ADD_DOC:
+        return {...state, documents: payload}
+      case actions.IS_CHECKED:
+        return {...state, isChecked: payload}
+      case actions.UPDATE_GAME:
+        return {...state, gameNumber: payload}
+      case actions.LAST_SCORE:
+        return {...state, lastScore: payload}
+        case actions.CURRENT_SCORE:
+            return {...state, currentScore: payload}
       case actions.CHANGE_COLOR:
         return {...state, color: payload}
       case actions.UPDATE_DISABLED:
@@ -31,8 +56,6 @@ const actions = {
           return {...state, choiceOne: payload}
       case actions.UPDATE_CHOICE2:
           return {...state, choiceTwo: payload}
-      case actions.UPDATE_SCORE:
-          return {...state, score: payload}
       case actions.UPDATE_TURNS:
           return {...state, turns: state.turns + 1}
           case actions.UPDATE_CARDS:
@@ -53,25 +76,46 @@ const actions = {
 
  }
 
+ const initState = {
+  color: '#00d1f6',
+  turns: 0,
+  currentScore: null,
+  lastScore: [],
+  cards: [],
+  choiceOne: null,
+  choiceTwo: null,
+  disabled: false,
+  isChecked: true,
+  gameNumber: 1,
+  documents: null,
+  saveToDB: false,
+  manualChange: false
+ 
+};
+
+const resetVals = {
+  color: "#00d1f6",
+  turns: 0,
+  currentScore: null,
+  lastScore: [],
+  gameNumber: 1,
+  documents: null
+}; 
+
+//  console.log('resetVals', resetVals);
+
+
 
 export default function GeneralContext({children}) {
 
-  const [state, dispatch] = useReducer(mainReducer, {
-    color: '#00d1f6',
-    turns: 0,
-    score: 0,
-    cards: [],
-    choiceOne: null,
-    choiceTwo: null,
-    disabled: false
-  })
+  const [state, dispatch] = useReducer(mainReducer, initState)
 
    
     const cardImages = [
-        {"src": "./img/anna.png", matched: false},
-        {"src": "./img/elsa.png", matched: false},
-        {"src": "./img/elsa-anna.png", matched: false},
-        {"src": "./img/anna-elsa-olaf.png", matched: false},
+        {"src": "./img/anna.png", matched: true},
+        {"src": "./img/elsa.png", matched: true},
+        {"src": "./img/elsa-anna.png", matched: true},
+        {"src": "./img/anna-elsa-olaf.png", matched: true},
         {"src": "./img/sven.png", matched: false},
         {"src": "./img/frozen-all.png", matched: false}
       ]
@@ -79,14 +123,14 @@ export default function GeneralContext({children}) {
       //logo
     const logoImg = './img/logo.png';
    
-    const themeColors =['#00d1f6', '#f32be2', '#18a1ed','#e9f001', '#e90000', '#a82fac'];
+    const themeColors =['#00d1f6', '#f32be2', '#18a1ed','#e9f001', '#e90000', '#a82fac','#1e2e32'];
 
       //functions
     const shuffleCards = () => {
     
-      console.log('shuffle activated!');
+      console.log('shuffle activated!', state.turns);
       
-        dispatch({type: actions.UPDATE_SCORE, payload: state.turns})
+        dispatch({type: actions.LAST_SCORE, payload: state.turns})
       
         const shuffledCards = [...cardImages, ...cardImages]
         .sort(() => Math.random() - 0.5)
@@ -101,9 +145,12 @@ export default function GeneralContext({children}) {
         dispatch({type: actions.RESET_TURNS});
       }
 
-      const changeColor = (color) => {
-        console.log('change color hit', color);
+      const changeColor = (color, manualCH) => {
+        console.log('colour change hit', color);
         
+        
+       if(!state.manualChange){ dispatch({type: actions.MANUAL_CHANGE, payload: manualCH})}
+
         dispatch({type: actions.CHANGE_COLOR, payload: color})
     }
 

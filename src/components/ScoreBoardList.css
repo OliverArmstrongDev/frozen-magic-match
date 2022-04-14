@@ -1,0 +1,22 @@
+
+.scorelist-container{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+border: 1px solid rgb(211, 204, 204);
+margin-bottom: 3em;
+}
+.score-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    color: rgb(243, 243, 243);
+    font-weight: 500;
+    line-height: 2em;
+    padding-bottom: 0.8em;
+}
+h3{
+    color: rgb(255, 255, 255);
+}

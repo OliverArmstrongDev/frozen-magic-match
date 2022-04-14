@@ -3,6 +3,10 @@ import { useEffect, useContext} from 'react';
 import './App.css';
 import { MainContext } from './contexts/GeneralContext';
 import SingleCard from './components/SingleCard';
+import { useCollection } from "./hooks/useCollection";
+import { useAuthContext } from './hooks/useAuthContext';
+
+
 
 
 function GameLogic() {
@@ -10,33 +14,63 @@ function GameLogic() {
 const {
   dispatch, actions,
   state,
-  shuffleCards
+  shuffleCards,changeColor
 } = useContext(MainContext);
+const {user} = useAuthContext();
+
+const {documents, error, getColorDocument} = useCollection('GameColor',
+["uid", "==", user ? user.uid: null]
+);
 
 
 //init shufflecards()
 useEffect(() => {
+  
   shuffleCards();
   },[])
 
 //update background color on color change
 useEffect(() => { 
-  document.body.style.backgroundColor = state.color;
-}, [state.color]) 
+  let _BGColor;
+  let _manual;
 
-// useEffect(() => { 
-//   if(state.cards.length){
-//     state.cards.every(card=> (card.matched === true)) 
-//     ? 
-//     alert('You matched them all. Great work!')
-//     : 
-//     console.log('not all matched', state.cards);
+  // console.log('is user', user);
+  // console.log('manual change', state.manualChange);
+  // console.log('docs firestore', documents);
+  // console.log('docs state', state.documents);
+  
+ if(documents && documents.length > 0){
 
-//   } 
-//   else{
-//    console.log('no lenth', state.cards.length );
-//   }
-// }, [state.cards]) 
+   if(!state.manualChange){ //if NOT a manual change //= false
+      
+          if(user && documents[0].BGColour !== undefined){
+                  _BGColor = documents[0].BGColour
+                  // console.log('from firestore', _BGColor);
+                
+                }  
+            else{
+                  _BGColor = state.color;
+                  // console.log('else bg from state',_BGColor);
+                }
+          _manual = false;
+        
+    }
+    else{ //if it is a manual color change
+      
+      _BGColor = state.color; 
+      _manual = true;
+    }    
+  }
+ else{
+      
+      _BGColor = state.color; 
+      _manual = false;
+ }
+   
+    document.body.style.backgroundColor = _BGColor;
+    changeColor(_BGColor, _manual);
+
+}, [state.color, state.lastScore, state.documents, state.manualChange, user]) 
 
 
 useEffect(() => {
@@ -77,12 +111,13 @@ const resetTurn = () => {
   dispatch({type: actions.UPDATE_TURNS})
   dispatch({type: actions.UPDATE_DISABLED, payload: false});
 }
+
   return (
     <>
-    <div  className="GameLogic main-div" style={{background: state.color}}>
-    {state.cards.every(card=> (card.matched === true)) ? <div className='success-div font-face-ik'> <h1 className='success-msg'>Woohoo! <br /> You matched them all!!</h1></div>  : null}
+    <div className="GameLogic main-div" style={{background: state.color}}>
+    {state.cards && state.cards.every(card=> (card.matched === true)) ? <div className='success-div font-face-ik'> <h1 className='success-msg'>Woohoo! <br /> You matched them all!!</h1></div>  : null}
       <div className="card-grid">
-        {state.cards.map(card => (
+        {state.cards && state.cards.map(card => (
         <SingleCard 
         handleChoice={handleChoice} 
         key={card.id} 
@@ -92,8 +127,8 @@ const resetTurn = () => {
         />
         ))}
         </div>
-       
-        <p className='font-face-ik '>Turns: {state.turns}</p>
+        <h1>Game number: {state.gameNumber}</h1>
+       <p className='font-face-ik '>Turns: {state.turns}</p>
     </div>
      </>
   );

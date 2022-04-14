@@ -4,22 +4,17 @@ import './index.css';
 import './fonts/Icekingdom.ttf';
 import App from './App';
 import { ThemeContextProvider } from './contexts/ThemeContext';
-import ScoreBoard from './components/ScoreBoard';
-import ThemeSelector from './components/ThemeSelector';
-import Header from './components/Header';
 import GeneralContext from './contexts/GeneralContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 
 ReactDOM.render(
   <React.StrictMode>
      <GeneralContext> 
       <ThemeContextProvider>
-        <Header/>
-        <ThemeSelector/>
-      {/* <div className='main-container flex justify-center content-center'> */}
-        <ScoreBoard/>
+        <AuthContextProvider> 
         <App />
-      {/* </div> */}
+        </AuthContextProvider>
       </ThemeContextProvider>
     </GeneralContext>
   </React.StrictMode>,
