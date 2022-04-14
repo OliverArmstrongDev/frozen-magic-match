@@ -22,14 +22,19 @@
   }
   .navbar button, .navbar a {
     margin-left: 26px;
+    font-size: 0.6em;
   }
   .navbar a {
-    color: rgb(31, 34, 65);
+    color: rgb(228, 228, 232);
     text-decoration: none;
-   
+    text-transform: uppercase;
   }
 
   @media only screen and (max-width: 600px) {
+    .navbar ul {
+      
+      justify-content: flex-start;
+    }
     .navbar li {
       font-weight: bold;
       letter-spacing: 1px;

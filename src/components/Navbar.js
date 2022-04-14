@@ -19,16 +19,13 @@ const Navbar = () => {
                   <li><Link to={'/login'}>Login</Link></li>
                 </>
               )}
-                
           {user && (
                 <> 
-               
                   <li>
                     <button onClick={logout} className='btn'>Logout</button>
                   </li>
                 </>
           )}
-              
             </ul>
     </div>
 

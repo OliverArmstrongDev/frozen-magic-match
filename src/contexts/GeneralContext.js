@@ -1,5 +1,12 @@
 import React, { createContext, useReducer} from 'react'
 
+import anna from "../img/anna.png";
+import elsa from "../img/elsa.png";
+import elseAnna from "../img/elsa-anna.png";
+import annaElsaOlaf from "../img/anna-elsa-olaf.png";
+import sven from "../img/sven.png";
+import frznAll from "../img/frozen-all.png";
+
 export const MainContext = createContext();
 
 
@@ -112,12 +119,12 @@ export default function GeneralContext({children}) {
 
    
     const cardImages = [
-        {"src": "./img/anna.png", matched: true},
-        {"src": "./img/elsa.png", matched: true},
-        {"src": "./img/elsa-anna.png", matched: true},
-        {"src": "./img/anna-elsa-olaf.png", matched: true},
-        {"src": "./img/sven.png", matched: false},
-        {"src": "./img/frozen-all.png", matched: false}
+        {"src": anna, matched: true},
+        {"src": elsa, matched: true},
+        {"src": elseAnna, matched: true},
+        {"src": annaElsaOlaf, matched: true},
+        {"src": sven, matched: false},
+        {"src": frznAll, matched: false}
       ]
       
       //logo

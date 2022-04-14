@@ -9,7 +9,7 @@
 
 button {
   background: none;
-  border: 2px solid #fff;
+  border: 2px solid rgb(37, 37, 37);
   padding: 6px 12px;
   border-radius: 4px;
   color: #fff;
@@ -19,8 +19,8 @@ button {
 }
 
 button:hover {
-  background: #13ecf3;
-  color: #fff;
+  background: #053ea7;
+  color: #053ea7;
 }
 
 .card-grid {
