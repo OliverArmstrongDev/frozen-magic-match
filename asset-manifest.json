@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frozen-magic-match/static/css/main.67cc05d4.css",
+    "main.css": "/frozen-magic-match/static/css/main.25c624dc.css",
     "main.js": "/frozen-magic-match/static/js/main.77215e50.js",
     "static/media/sven.png": "/frozen-magic-match/static/media/sven.b49acb4748c271ec0643.png",
     "static/media/logo.png": "/frozen-magic-match/static/media/logo.e915bc37d3cc3209a834.png",
@@ -13,11 +13,11 @@
     "static/media/anna.png": "/frozen-magic-match/static/media/anna.022df1b43389ad55160b.png",
     "static/media/cover.jpg": "/frozen-magic-match/static/media/cover.f3b5abeaa67d6e83c3ad.jpg",
     "index.html": "/frozen-magic-match/index.html",
-    "main.67cc05d4.css.map": "/frozen-magic-match/static/css/main.67cc05d4.css.map",
+    "main.25c624dc.css.map": "/frozen-magic-match/static/css/main.25c624dc.css.map",
     "main.77215e50.js.map": "/frozen-magic-match/static/js/main.77215e50.js.map"
   },
   "entrypoints": [
-    "static/css/main.67cc05d4.css",
+    "static/css/main.25c624dc.css",
     "static/js/main.77215e50.js"
   ]
 }
