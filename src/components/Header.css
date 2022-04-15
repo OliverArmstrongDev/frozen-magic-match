@@ -18,8 +18,8 @@
   margin-top: -30px;
 }
 .magic {
-  margin-top: -10px;
-  font-size: 2.5em;
+  margin-top: 8px;
+  font-size: 2em;
   font-weight: 200;
   letter-spacing: 3px;
 }
@@ -43,9 +43,10 @@ p {
   }
   .magic {
     margin-top: 5px;
-    font-size: 1em;
+    font-size: 1.4em;
     font-weight: 200;
     letter-spacing: 3px;
+    color: #fff;
   }
   .btn {
     font-size: 0.8em;
@@ -53,6 +54,6 @@ p {
   }
   p {
     font-size: 1em;
-    color: #202020;
+    /* color: #202020; */
   }
 }

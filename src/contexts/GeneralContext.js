@@ -6,6 +6,7 @@ import elseAnna from "../img/elsa-anna.png";
 import annaElsaOlaf from "../img/anna-elsa-olaf.png";
 import sven from "../img/sven.png";
 import frznAll from "../img/frozen-all.png";
+import logoImg from '../img/logo.png';
 
 export const MainContext = createContext();
 
@@ -127,8 +128,7 @@ export default function GeneralContext({children}) {
         {"src": frznAll, matched: false}
       ]
       
-      //logo
-    const logoImg = './img/logo.png';
+  
    
     const themeColors =['#00d1f6', '#f32be2', '#18a1ed','#e9f001', '#e90000', '#a82fac','#1e2e32'];
 

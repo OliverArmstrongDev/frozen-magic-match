@@ -34,16 +34,18 @@ useEffect(() => {
        
             <div className="scorelist-container"> 
                 <h3>Score List:</h3>
+                
+                {console.log('state docs', state.documents)}
                  {error && <p>{error}</p>}
                 {(!user || !documents) && <h4>Play a game and save your score to see results here</h4>}
                 {documents && documents.map(doc => (
-                        <div className="score-list" key={doc.id}> 
-                        <div>{doc.createdAt.toDate().toLocaleDateString()} -</div>
-                        <div>{doc.createdAt.toDate().toLocaleTimeString()} -</div>
-                        <div>Game number: {doc.gameNum} -</div>
+                       <div className="score-list" key={doc.id}> 
+                        <div>{doc.createdAt.toDate().toLocaleDateString()}</div>
+                        <div>{doc.createdAt.toDate().toLocaleTimeString()}</div>
+                        <div>Game number: {doc.gameNum}</div>
                         <div>Score was: {doc.lastScore}</div>
                         </div>
-                    ))}
+                ))}
             </div>
        
     </div>

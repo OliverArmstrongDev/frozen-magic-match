@@ -11,7 +11,7 @@ margin-bottom: 3em;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-size: 1em;
+    font-size: 0.9em;
     color: rgb(243, 243, 243);
     font-weight: 500;
     line-height: 2em;
@@ -21,13 +21,34 @@ h3{
     color: rgb(255, 255, 255);
 }
 
+@media only screen and (max-width: 850px) {
+    .scorelist-container{
+        width: 90%;
+    }
+    .score-list{
+       
+        font-size: 0.8em;
+        
+    }
+   
+  }
 @media only screen and (max-width: 600px) {
     .scorelist-container{
         width: 90%;
     }
     .score-list{
        
-        font-size: 0.6em;
+        font-size: 0.7em;
+        
+    }
+}
+@media only screen and (max-width: 520px) {
+    .scorelist-container{
+        width: 90%;
+    }
+    .score-list{
+       
+        font-size: 0.5em;
         
     }
    
