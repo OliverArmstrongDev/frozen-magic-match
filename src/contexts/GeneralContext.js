@@ -135,7 +135,7 @@ export default function GeneralContext({children}) {
       //functions
     const shuffleCards = () => {
     
-      console.log('shuffle activated!', state.turns);
+      // console.log('shuffle activated!', state.turns);
       
         dispatch({type: actions.LAST_SCORE, payload: state.turns})
       
@@ -153,8 +153,7 @@ export default function GeneralContext({children}) {
       }
 
       const changeColor = (color, manualCH) => {
-        console.log('colour change hit', color);
-        
+        // console.log('colour change hit', color);
         
        if(!state.manualChange){ dispatch({type: actions.MANUAL_CHANGE, payload: manualCH})}
 
