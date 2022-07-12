@@ -18,22 +18,27 @@
     /* margin-left: auto; */
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .navbar button, .navbar a {
     margin-left: 26px;
+    font-size: 0.6em;
   }
   .navbar a {
-    color: rgb(31, 34, 65);
+    color: rgb(255, 255, 255);
     text-decoration: none;
-   
+    text-transform: uppercase;
   }
 
   @media only screen and (max-width: 600px) {
+    .navbar ul {
+      
+      justify-content: flex-start;
+    }
     .navbar li {
       font-weight: bold;
       letter-spacing: 1px;
-      font-size: 1em;
+      font-size: 0.6em;
       margin-left: 0px;
     }
     }

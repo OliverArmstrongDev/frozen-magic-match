@@ -1,5 +1,13 @@
 import React, { createContext, useReducer} from 'react'
 
+import anna from "../img/anna.png";
+import elsa from "../img/elsa.png";
+import elseAnna from "../img/elsa-anna.png";
+import annaElsaOlaf from "../img/anna-elsa-olaf.png";
+import sven from "../img/sven.png";
+import frznAll from "../img/frozen-all.png";
+import logoImg from '../img/logo.png';
+
 export const MainContext = createContext();
 
 
@@ -112,23 +120,22 @@ export default function GeneralContext({children}) {
 
    
     const cardImages = [
-        {"src": "./img/anna.png", matched: true},
-        {"src": "./img/elsa.png", matched: true},
-        {"src": "./img/elsa-anna.png", matched: true},
-        {"src": "./img/anna-elsa-olaf.png", matched: true},
-        {"src": "./img/sven.png", matched: false},
-        {"src": "./img/frozen-all.png", matched: false}
+        {"src": anna, matched: false},
+        {"src": elsa, matched: false},
+        {"src": elseAnna, matched: false},
+        {"src": annaElsaOlaf, matched: false},
+        {"src": sven, matched: false},
+        {"src": frznAll, matched: false}
       ]
       
-      //logo
-    const logoImg = './img/logo.png';
+  
    
     const themeColors =['#00d1f6', '#f32be2', '#18a1ed','#e9f001', '#e90000', '#a82fac','#1e2e32'];
 
       //functions
     const shuffleCards = () => {
     
-      console.log('shuffle activated!', state.turns);
+      // console.log('shuffle activated!', state.turns);
       
         dispatch({type: actions.LAST_SCORE, payload: state.turns})
       
@@ -146,8 +153,7 @@ export default function GeneralContext({children}) {
       }
 
       const changeColor = (color, manualCH) => {
-        console.log('colour change hit', color);
-        
+        // console.log('colour change hit', color);
         
        if(!state.manualChange){ dispatch({type: actions.MANUAL_CHANGE, payload: manualCH})}
 
